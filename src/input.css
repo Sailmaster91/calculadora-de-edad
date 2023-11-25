@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	background-color: #e5e6e7;
+	font-family: Poppins, sans-serif;
+}
+
+.input--error {
+	border: 1px solid hsl(0, 100%, 67%);
+}
+.input--error:focus {
+	border: 1px solid hsl(0, 100%, 67%) !important;
+}
+.texto--error {
+	color: hsl(0, 100%, 67%);
+}
+
+.error-mjs {
+	display: block;
+	color: hsl(0, 100%, 67%) !important;
+}
+
+.numero-animado {
+	display: inline-block;
+	width: fit-content;
+	opacity: 1;
+	transition: all 0.2s ease-in-out;
+}

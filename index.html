@@ -4,8 +4,15 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- displays site properly based on user's device -->
-
+		<link rel="stylesheet" href="./public/main.css" />
+		<script src="./public/bundle.js" defer type="module"></script>
 		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
+			rel="stylesheet"
+		/>
 
 		<title>Frontend Mentor | Age calculator app</title>
 
@@ -20,19 +27,110 @@
 			}
 		</style>
 	</head>
-	<body>
-		<div class="container">
-			<div class="Days"><input type="text" /></div>
-			<div class="Months">Month MM</div>
-			<div class="Year">Year YYYY</div>
-			<div class="Button"></div>
-			<div class="DATOS">-- years -- months -- days</div>
-		</div>
+	<body class="sm: text-sm">
+		<div class="w-screen h-screen block bg-transparent overlay">
+			<main
+				class="md:container mx-auto bg-white text-black max-w-[344px] md:w-[840px] mt-28 md:min-h-[650px] h-[520px] block md:rounded-br-[250px] md:rounded-3xl rounded-2xl rounded-br-[100px]"
+				id="contenedor-principal"
+			>
+				<div
+					class="flex justify-between items-center md:pt-16 md:pr-60 mr-0 md:pl-9 p-5 gap-5 pt-14 mb-14 md:mb-2"
+				>
+					<div class="md:ml-5 md:h-28 md:w-40 min-w-[5.5rem]">
+						<label
+							for="day"
+							class="md:text-sm text-xs font-bold uppercase tracking-[0.4rem] text-gray-500"
+						>
+							Day</label
+						>
+						<input
+							type="text"
+							placeholder="DD"
+							class="md:mt-2 mt-1 border-[1px] border-gray-300 pl-4 p-3 rounded-xl md:w-40 w-[5.5rem] text-xl md:text-3xl font-bold focus:border-1 focus:border-[#864cff] focus:outline-none"
+							id="day"
+							value=""
+						/>
+						<span
+							class="text-red-500 text-[0.65rem] w-full error-msj hidden"
+							data-action="mostrar__error"
+							>The date must be a valid day</span
+						>
+					</div>
+					<div class="days md:ml-5 md:h-28 md:w-40 min-w-[5.5rem]">
+						<label
+							for="month"
+							class="md:text-sm text-xs font-bold uppercase tracking-[0.4rem] text-gray-500"
+						>
+							Month</label
+						>
+						<input
+							type="text"
+							placeholder="MM"
+							class="md:mt-2 mt-1 border-[1px] border-gray-300 pl-4 p-3 rounded-xl md:w-40 w-[5.5rem] text-xl md:text-3xl font-bold focus:border-1 focus:border-[#864cff] focus:outline-none"
+							id="month"
+							value=""
+						/>
+						<span
+							class="text-red-500 text-[0.65rem] w-full error-msj hidden"
+							data-action="mostrar__error"
+							>The date must be a valid month</span
+						>
+					</div>
+					<div class="days md:ml-5 md:h-28 md:w-40 min-w-[5.5rem]">
+						<label
+							for="year"
+							class="md:text-sm text-xs font-bold uppercase tracking-[0.4rem] text-gray-500"
+						>
+							Year</label
+						>
+						<input
+							type="text"
+							placeholder="YYYY"
+							class="md:mt-2 mt-1 border-[1px] border-gray-300 pl-4 p-3 rounded-xl md:w-40 w-[5.5rem] text-xl md:text-3xl font-bold focus:border-1 focus:border-[#864cff] focus:outline-none"
+							id="year"
+							value=""
+						/>
+						<span
+							class="text-red-500 text-[0.65rem] w-full error-msj hidden"
+							data-action="mostrar__error"
+							>The date must be a valid year</span
+						>
+					</div>
+				</div>
+				<section class="flex justify-between items-center md:pt-0 md:mr-28 md:pl-14 pl-5 pr-5">
+					<span class="border-[1px] border-gray-300 w-full relative"
+						><button
+							class="btn-calculo bg-[#864cff] flex justify-center items-center h-16 w-16 md:h-20 md:w-20 md:p-6 p-5 rounded-full absolute md:top-[-48px] top-[-30px] md:right-[-10%] right-[40%]"
+							data-action="calcular"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="46"
+								height="44"
+								viewBox="0 0 46 44"
+								class="fill-none stroke-white stroke-[0.2rem]"
+							>
+								<path
+									d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
+								/>
+							</svg>
+						</button>
+					</span>
+				</section>
 
-		<div class="attribution">
+				<section
+					class="datos w-full flex justify-center align-top flex-col h-auto text-black pl-5 pr-5 font-extrabold italic text-6xl mt-16 mb-12 md:mb-20 md:text-8xl md:pb-10 md:pl-12"
+				>
+					<p><span class="numero-animado text-purple-600" id="num__years">--</span> years</p>
+					<p><span id="num__months" class="numero-animado text-purple-600">--</span> mon</p>
+					<p><span id="num__days" class="numero-animado text-purple-600">--</span> days</p>
+				</section>
+			</main>
+		</div>
+		<!-- <div class="attribution">
 			Challenge by
 			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
 			Coded by <a href="#">Your Name Here</a>.
-		</div>
+		</div> -->
 	</body>
 </html>
