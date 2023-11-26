@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- displays site properly based on user's device -->
 		<link rel="stylesheet" href="./public/main.css" />
-		<script src="./public/bundle.js" defer type="module"></script>
+		<script src="./public/bundle.js" defer></script>
 		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -97,12 +97,12 @@
 						>
 					</div>
 				</div>
-				<section class="flex justify-between items-center md:pt-0 md:mr-28 md:pl-14 pl-5 pr-5">
+				<div class="flex justify-between items-center md:pt-0 md:mr-28 md:pl-14 pl-5 pr-5">
 					<span class="border-[1px] border-gray-300 w-full relative"
 						><button
 							class="btn-calculo bg-[#864cff] flex justify-center items-center h-16 w-16 md:h-20 md:w-20 md:p-6 p-5 rounded-full absolute md:top-[-48px] top-[-30px] md:right-[-10%] right-[40%]"
 							data-action="calcular"
-							type="button"
+							title="button-calculo"
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -117,15 +117,15 @@
 							</svg>
 						</button>
 					</span>
-				</section>
+				</div>
 
-				<section
+				<div
 					class="datos w-full flex justify-center align-top flex-col italic h-auto text-black pl-5 pr-5 font-extrabold text-6xl mt-16 mb-12 md:mb-20 md:text-8xl md:pb-10 md:pl-12"
 				>
 					<p><span class="numero-animado text-purple-600" id="num__years">--</span> years</p>
 					<p><span id="num__months" class="numero-animado text-purple-600">--</span> months</p>
 					<p><span id="num__days" class="numero-animado text-purple-600">--</span> days</p>
-				</section>
+				</div>
 			</main>
 		</div>
 		<!-- <div class="attribution">
